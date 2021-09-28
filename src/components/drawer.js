@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
-import { Box } from 'theme-ui';
-import RcDrawer from 'rc-drawer';
+import React, { Fragment } from "react";
+import { Box } from "theme-ui";
+import RcDrawer from "rc-drawer";
 
-export default function Drawer ({ 
+export default function Drawer({
   className,
   children,
   closeButton,
@@ -17,11 +17,17 @@ export default function Drawer ({
   ...props
 }) {
   return (
-    <h1>Drawer</h1>
+    <Fragment>
+      <RcDrawer
+        open={open}
+        onClose={toggleHandler}
+        className={`drawer ${className || ""}`.trim()}
+      ></RcDrawer>
+    </Fragment>
   );
-};
+}
 
 Drawer.defaultProps = {
-  width: '320px',
-  placement: 'left',
+  width: "320px",
+  placement: "left",
 };
